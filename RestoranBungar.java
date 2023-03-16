@@ -54,5 +54,19 @@ public class RestoranBungar {
         System.out.println("3. Steak Sirloin Spesial    = "+ df2.format(jSS) + " porsi * Rp. " + df.format(menu3) + " = Rp.     " + df.format(totSS));
         System.out.println("4. Kwetiaw Siram Spesial    = "+ df2.format(jKS) + " porsi * Rp. " + df.format(menu4) + " = Rp.     " + df.format(totKS));
         System.out.println("5. Kambing Guling Spesial   = "+ df2.format(jKG) + " porsi * Rp. " + df.format(menu5) + " = Rp.     " + df.format(totKG) + " +");
+        System.out.println("=====================" + "\n\r");
+        double totalPembelian = totNG + totAB + totSS + totKS + totKG;
+        System.out.println("\n\rTotal Pembelian = Rp. " + df.format(totalPembelian));
+        // tampilan diskon dan total pembelian setelah diskon
+        double diskonPembelian = 0.1 * totalPembelian;
+        System.out.println("\n\rDisc. 10% <Masa Promosi> = Rp. " + df.format(diskonPembelian));
+        double TotalSetelahDiskon = totalPembelian - diskonPembelian;
+        System.out.println("=====================" + "\n\r");
+        System.out.println("\n\rTotal Pembelian setelah disc 10% = Rp. " + df.format(TotalSetelahDiskon));
+        // tampilan pembelian per orang
+        double TotalPembelianPerOrang = TotalSetelahDiskon / jumlahOrang;
+        System.out.println("\n\rPembelian per orang <untuk "+ jumlahOrang +"orang = Rp. " + df.format(TotalPembelianPerOrang));
+        System.out.println("Terima kasih atas kunjungan Anda..." + "\n\r" );
+        System.out.println("...tekan ENTER untuk keluar..." + "\n\r" );
     }
 }
