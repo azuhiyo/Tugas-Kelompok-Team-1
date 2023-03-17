@@ -46,19 +46,42 @@ public class RestoranBungar {
         System.out.print("5. Kambing Guling Spesial   = ");
         double jKG = input.nextDouble();
         
-        //Hitung Pembelian Yang Dilakukan Oleh User
+        //Hitung dan Tampilkan Harga Pembelian Dari Masing-Masing Menu
         double totNG = jNG * menu1;
         double totAB = jAB * menu2;
         double totSS = jSS * menu3;
         double totKS = jKS * menu4;
         double totKG = jKG * menu5;
-        
-        //Tampilkan Harga Pembelian Dari Pesanan User
+
         System.out.println("\n\r" + "\n\r" + "Selamat menikmati makanan anda..." + "\n\r" + "\n\r" + "Pembelian :");
-        System.out.println("\n\r" + "1. Nasi Goreng Spesial      = "+ df2.format(jNG) + " porsi * Rp. " + df.format(menu1) + "  = Rp.      " + df.format(totNG));
+        System.out.println("\n\r" + "1. Nasi Goreng Spesial      = "+ df2.format(jNG) + " porsi * Rp.  " + df.format(menu1) + " = Rp.      " + df.format(totNG));
         System.out.println("2. Ayam Bakar Spesial       = "+ df2.format(jAB) + " porsi * Rp. " + df.format(menu2) + " = Rp.     " + df.format(totAB));
         System.out.println("3. Steak Sirloin Spesial    = "+ df2.format(jSS) + " porsi * Rp. " + df.format(menu3) + " = Rp.     " + df.format(totSS));
         System.out.println("4. Kwetiaw Siram Spesial    = "+ df2.format(jKS) + " porsi * Rp. " + df.format(menu4) + " = Rp.     " + df.format(totKS));
-        System.out.println("5. Kambing Guling Spesial   = "+ df2.format(jKG) + " porsi * Rp. " + df.format(menu5) + " = Rp.     " + df.format(totKG) + " +");
+        System.out.println("5. Kambing Guling Spesial   = "+ df2.format(jKG) + " porsi * Rp. " + df.format(menu5) + " = Rp.    " + df.format(totKG) + "   +");
+        System.out.println("===========================================================================");
+
+        //Hitung dan Tampilkan Total Pembelian
+        double TotalPembelian = totNG + totAB + totSS + totKS + totKG;
+        System.out.println("Total Pembelian                                      = " + "Rp.    " + df.format(TotalPembelian));
+
+        //Hitung dan Tampilkan Harga Diskon
+        double TotalDiskon = TotalPembelian * 10/100;
+        System.out.println("Disc. 10% <Masa Promosi>                             = " + "Rp.     " + df.format(TotalDiskon) + "   -");
+        System.out.println("===========================================================================");
+
+        //Hitung dan Tampilkan Total Pembelian Setelah Diskon
+        double TotalPembelianStlhDiskon = TotalPembelian - TotalDiskon;
+        System.out.println("Total Pembelian setelah disc 10%                     = " + "Rp.    " + df.format(TotalPembelianStlhDiskon));
+
+        //Hitung dan Tampilkan Pembelian Per Orang
+        double PembelianPerOrang = TotalPembelianStlhDiskon / jumlahOrang;
+        System.out.println("Pembelian per orang <untuk " + jumlahOrang + " orang>                = " + "Rp.     " + df.format(PembelianPerOrang));
+
+        System.out.println("\n                  Terima Kasih Atas Kunjungan Anda...                  ");
+        System.out.println("\n                    ...tekan Enter untuk keluar...                     ");
+        try{System.in.read();}
+        catch (Exception e){}
+        System.out.println("Anda Telah Keluar...");
     }
 }
