@@ -76,7 +76,7 @@ public class RestoranBungar {
 
         //Hitung dan Tampilkan Pembelian Per Orang
         double PembelianPerOrang = TotalPembelianStlhDiskon / jumlahOrang;
-        System.out.println("Pembelian per orang <untuk " + jumlahOrang + " orang>                = " + "Rp.     " + df.format(PembelianPerOrang));
+        System.out.println("Pembelian per orang <untuk " + df2.format(jumlahOrang) + " orang>                = " + "Rp.     " + df.format(PembelianPerOrang));
 
         System.out.println("\n                  Terima Kasih Atas Kunjungan Anda...                  ");
         System.out.println("\n                    ...tekan Enter untuk keluar...                     ");
